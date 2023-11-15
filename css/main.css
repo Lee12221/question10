@@ -1,0 +1,112 @@
+@charset "utf-8;";
+*{margin: 0;padding: 0;}
+li{list-style: none;}
+a{
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transition: .3s;
+}
+img{display: block;transition: .3s;}
+body{color: #333;}
+
+#wrap{display: flex;height: 650px;}
+#right{width: 800px;}
+
+.logo{padding: 30px 0;}
+nav{padding: 10px;}
+
+.sub{display: none;}
+/* .gnb li:hover .sub{display: block;} */
+
+.gnb a{line-height: 40px;text-align: center;}
+.sub a{line-height: 32px;}
+
+.gnb li:hover>a{background: #333;color: #fff;}
+
+.gnb{box-shadow: 0 0 3px #333;}
+.gnb>li{border-bottom: 1px #ccc solid;}
+.gnb>li:last-child{border-bottom: 0;}
+
+#slide{height: 350px;overflow: hidden;}
+#slide ul{animation: slide 9s infinite;}
+@keyframes slide {
+    0%{margin-top: 0;opacity: 0;}
+    3%{margin-top: 0;opacity: 1;}
+    30%{margin-top: 0;opacity: 1;}
+    33%{margin-top: 0;opacity: 0;}
+
+    33.1%{margin-top: -350px;opacity: 0;}
+    36%{margin-top: -350px;opacity: 1;}
+    63%{margin-top: -350px;opacity: 1;}
+    66%{margin-top: -350px;opacity: 0;}
+
+    66.1%{margin-top: -700px;opacity: 0;}
+    69%{margin-top: -700px;opacity: 1;}
+    97%{margin-top: -700px;opacity: 1;}
+    100%{margin-top: -700px;opacity: 0;}
+}
+
+#contents{height: 200px;display: flex;}
+#contents section{
+    padding: 10px; width: 240px;
+}
+#contents section:first-child{width: 260px;}
+
+.title{
+    line-height: 30px;text-align: center;
+    box-shadow: 0 0 3px #333;
+}
+.notice a{
+    display: flex;
+    line-height: 30px;   
+}
+.num{width: 20px;}
+.subject{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.notice a:hover{background: #eee;}
+
+.gallery img{width: 75px;}
+.gallery{
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.gallery a:hover{opacity: .7;}
+
+.link{
+    background: url("../img/link.jpg") center center / cover;
+    height: 180px;
+    position: relative;
+}
+.link a{
+    position: absolute;
+    padding: 10px;
+    background: rgba(0,0,0,.6);
+    color: #fff;  
+    top:50%;left: 50%;
+    transform: translate(-50%,-50%);
+}
+.link a:hover{
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 0 3px #ffa;
+}
+
+#footer{height: 100px;display: flex;
+    background: #eee;
+    align-items: center;
+    justify-content: space-between;
+}
+.copy{
+    font-size: 13px;
+    padding-left: 20px;
+}
+.f_right{padding-right: 20px;}
+.f_right select{
+    width: 150px;
+    height: 32px;
+}

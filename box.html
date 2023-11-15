@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax_ex</title>
+    <style>
+        *{margin:0; padding:0;}
+        #wrap{height:600vh;}
+        body::-webkit-scrollbar {
+            width: 0.7em;
+            background: #f33;
+        }
+        body::-webkit-scrollbar-thumb {
+            background: #f99;
+        }
+        section{height:100vh; position:relative;}
+        section:nth-child(1){background: #f33;}
+        section:nth-child(2){background:url(https://images.pexels.com/photos/347134/pexels-photo-347134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+            background-size: cover;
+        }
+        section:nth-child(3){background: #f77;}
+        section:nth-child(4){background: #f99;}
+        section:nth-child(5){background: #fbb;}
+        section:nth-child(6){background: #fdd;}
+
+        section .box{position:absolute; top:300px; left:-300px; opacity:0; border:2px #333 solid;  width:150px; height: 150px; transition:all .6s;}
+        section .txt{position:absolute; top:-300px; left:700px; opacity:0; border:2px #333 solid; width:300px; height:150px; background: #fff; transition:all .6s;}
+
+        section.active .box{position:absolute; top:300px; left:300px; opacity:1; border:2px #333 solid;  width:150px; height: 150px; }
+        section.active .txt{position:absolute; top:300px; left:700px; opacity:1; border:2px #333 solid; width:300px; height:150px; background: #fff; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <section>
+            <div class="box"></div>
+            <div class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis assumenda exercitationem modi eaque perspiciatis incidunt ullam nemo quo dolorem. Adipisci similique officiis omnis in commodi id exercitationem debitis quo.</div>
+        </section>
+        <section>
+            <div class="box"></div>
+            <div class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis assumenda exercitationem modi eaque perspiciatis incidunt ullam nemo quo dolorem. Adipisci similique officiis omnis in commodi id exercitationem debitis quo.</div>
+        </section>
+        <section>
+            <div class="box"></div>
+            <div class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis assumenda exercitationem modi eaque perspiciatis incidunt ullam nemo quo dolorem. Adipisci similique officiis omnis in commodi id exercitationem debitis quo.</div>
+        </section>
+        <section>
+            <div class="box"></div>
+            <div class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis assumenda exercitationem modi eaque perspiciatis incidunt ullam nemo quo dolorem. Adipisci similique officiis omnis in commodi id exercitationem debitis quo.</div>
+        </section>
+        <section>
+            <div class="box"></div>
+            <div class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis assumenda exercitationem modi eaque perspiciatis incidunt ullam nemo quo dolorem. Adipisci similique officiis omnis in commodi id exercitationem debitis quo.</div>
+        </section>
+        <section>
+            <div class="box"></div>
+            <div class="txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga debitis assumenda exercitationem modi eaque perspiciatis incidunt ullam nemo quo dolorem. Adipisci similique officiis omnis in commodi id exercitationem debitis quo.</div>
+        </section>
+    </div>
+
+    <script>
+
+        document.addEventListener('scroll', scrollAni);
+        var section = document.querySelectorAll("section");
+        
+        function scrollAni(){
+                
+                if(window.pageYOffset <= 150 && window.pageYOffset >= 0){
+                    section[0].classList.add("active");
+                    
+                }else{
+                    section[0].classList.remove("active");
+                }
+                
+                if(window.pageYOffset <= innerHeight*1+150 && window.pageYOffset >= innerHeight*1-150){
+                    section[1].classList.add("active");
+
+                }else{
+                    section[1].classList.remove("active");
+                }
+                
+                if(window.pageYOffset <= innerHeight*2+150 && window.pageYOffset >= innerHeight*2-150){
+                    section[2].classList.add("active");
+
+                }else{
+                    section[2].classList.remove("active");
+                }
+                
+                if(window.pageYOffset <= innerHeight*3+150 && window.pageYOffset >= innerHeight*3-150){
+                    section[3].classList.add("active");
+
+                }else{
+                    section[3].classList.remove("active");
+                }
+                
+                if(window.pageYOffset <= innerHeight*4+150 && window.pageYOffset >= innerHeight*4-150){
+                    section[4].classList.add("active");
+                }else{
+                    section[4].classList.remove("active");
+                }
+                
+                if(window.pageYOffset <= innerHeight*5+150 && window.pageYOffset >= innerHeight*5-150){
+                    section[5].classList.add("active");
+
+                }else{
+                    section[5].classList.remove("active");
+                }
+                
+            }
+    </script>
+</body>
+</html>
